@@ -193,12 +193,14 @@ header nav a {
 }
 
 .voteBox {
-    min-width: 490px; 
-    min-height: 550px; 
+    min-width: 490px;  
+    height: 550px; 
     margin-top: 10px;
     margin-bottom: 40px;
     color: white;
     position: relative;
+    content: ' ';
+    background-size: cover;
 }
 
 .voteBox--person1 {
@@ -411,4 +413,61 @@ header nav a {
 .footer__social i {
     color: black;
     font-size:32px;
+}
+
+
+@media(max-width: 700px) {
+ 
+    .voteContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .info {
+        display: none;
+      }
+    
+    .add {
+        display:none;
+    }
+
+    .wrapper {
+        height: 600px;
+    }
+    
+    header {
+        padding: 0px;
+    }
+    
+    header h1 {
+        margin-left: 0px;
+    }
+         
+    header nav a {
+        display: none;       
+    }
+      
+    .main{
+        width: 320px;
+        height: 300px;
+    }
+      
+    .main__subtitle{
+        font-size: 10px;
+    }
+      
+    .main__title{
+        font-size: 20px;
+    }
+    
+    .main__description {
+        font-size: 14px;
+    }
+    
+    .votes__title {
+        text-align: left;
+        padding: 0px 0px 0px 0px;
+    }
+ 
 }
