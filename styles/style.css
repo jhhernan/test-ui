@@ -130,7 +130,7 @@ header nav a {
     font-size:14px; 
     display: flex;
     align-items: center;
-    padding-left: 300px;
+    padding-left: 250px;
   }
   
 .mainDue__counter {
@@ -371,4 +371,44 @@ header nav a {
     font-weight: bold;
     margin-left: auto;
     margin-right:40px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.footer__terms {
+    float:left;
+    text-decoration: none;
+    margin-left: 130px;
+}
+  
+.footer__terms a {
+    color: black;
+    font-size:12px;
+    margin-right:20px;
+}
+
+.footer__social {
+    display:flex;
+    align-items: center;
+    float:right;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: 130px;
+    font-size: 12px;
+}
+  
+ .footer__social a {
+    color: black;
+    margin-left:20px;
+    text-decoration: none;
  }
+  
+.footer__social i {
+    color: black;
+    font-size:32px;
+}
