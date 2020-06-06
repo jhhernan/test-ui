@@ -1,3 +1,8 @@
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 .main {
     background: url('../images/Pope.png') no-repeat center top;
     background-size: cover;
@@ -25,7 +30,6 @@
 
 .person1 {
     background: url('../images/Kanye.png') no-repeat center top;
-    border: 1px solid black;
     position: relative;
 }
 .person2 {
@@ -47,7 +51,7 @@
     position: absolute;
     bottom: 205px;
     font-size: 2.5em;
-    padding-left: 40px; 
+    padding-left: 45px; 
     margin: 0;
 }
 
@@ -55,14 +59,14 @@
     position: absolute;
     top: 340px;
     font-size: 0.9em;
-    padding-left: 40px;
+    padding-left: 45px;
     margin: 0;
 }
 
 .description {
     position: absolute;
     top: 370px;
-    padding-left: 40px;
+    padding-left: 45px;
     margin: 0;
 }
 
@@ -71,9 +75,10 @@
     height: 30px;
     position: absolute;
     left: 0;
-    top: 307px;
+    top: 302px;
     background: rgba(28,187,180,0.5);
-
+    padding: 4px;
+    font-size: 24px;
 }
 
 .thumbUp {
@@ -84,6 +89,42 @@
     background: rgba(255,173,29,0.8);
 }
 
+.vote{
+    position: absolute;
+    bottom: 80px;
+    padding-left: 45px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.btnUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: rgba(28,187,180,0.8);
+}
+
+.btnDown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: rgba(255,173,29,0.8);
+    margin-left: 10px;
+}
+.btnVote {
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    width: 86px;
+    height: 32px;
+}
 
 .up{
     background: rgba(28,187,180,0.8);
@@ -106,15 +147,14 @@
     bottom: 0;
     font-size: 30px;
     text-align: right;
-
 }
 
 .upText{
     display: block;
-    padding: 10px;
+    padding: 8px;
 }
 
 .downText{
     display: block;
-    padding: 10px;
+    padding: 8px;
 }
