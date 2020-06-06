@@ -9,14 +9,13 @@ body {
     height: 800px;
 }
 
-.flex {
+.voteContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
-.person {
+.voteBox {
     min-width: 490px; 
     min-height: 550px; 
     margin-top: 20px;
@@ -27,27 +26,20 @@ body {
     /* background-size: cover; */
 }
 
-
-.person1 {
+.voteBox--person1 {
     background: url('../images/Kanye.png') no-repeat center top;
-    position: relative;
 }
-.person2 {
+.voteBox--person2 {
     background: url('../images/Mark.png') no-repeat center top;
 }
-.person3 {
+.voteBox--person3 {
     background: url('../images/Cristina.png') no-repeat center top;
 }
-.person4 {
+.voteBox--person4 {
     background: url('../images/Malala.png') no-repeat center top;
 }
 
-.personLevel1{
-    position: absolute;
-    width:100%;
-}
-
-.title {
+.voteBox__title {
     position: absolute;
     bottom: 205px;
     font-size: 2.5em;
@@ -55,7 +47,7 @@ body {
     margin: 0;
 }
 
-.date {
+.voteBox__date {
     position: absolute;
     top: 340px;
     font-size: 0.9em;
@@ -63,33 +55,32 @@ body {
     margin: 0;
 }
 
-.description {
+.voteBox__description {
     position: absolute;
     top: 370px;
     padding-left: 45px;
     margin: 0;
 }
 
-.thumbStatus {
+.voteBox__status {
     width: 30px;
     height: 30px;
     position: absolute;
     left: 0;
     top: 302px;
-    background: rgba(28,187,180,0.5);
     padding: 4px;
     font-size: 24px;
 }
 
-.thumbUp {
+.voteBox__status--Up {
     background: rgba(28,187,180,0.8);
 }
 
-.thumbDown {
+.voteBox__status--Down {
     background: rgba(255,173,29,0.8);
 }
 
-.vote{
+.voteBox__vote{
     position: absolute;
     bottom: 80px;
     padding-left: 45px;
@@ -98,7 +89,7 @@ body {
     width: 100%;
 }
 
-.btnUp {
+.voteBox__btnUp {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +98,7 @@ body {
     background: rgba(28,187,180,0.8);
 }
 
-.btnDown {
+.voteBox__btnDown {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,7 +107,8 @@ body {
     background: rgba(255,173,29,0.8);
     margin-left: 10px;
 }
-.btnVote {
+
+.voteBox__btnVote {
     border: 1px solid white;
     display: flex;
     align-items: center;
@@ -126,35 +118,47 @@ body {
     height: 32px;
 }
 
-.up{
+.voteBox__barUp {
     background: rgba(28,187,180,0.8);
     position: absolute;
     display: block;
-    width: 30%;
     height: 50px;
     left: 0;
     bottom: 0;
     font-size: 30px;
+    /* width: 30%; */
 }
 
-.down{
+.voteBox__barDown {
     background: rgba(255,173,29,0.8);
     position: absolute;
     display: block;
-    width: 70%;
     height: 50px;
     right: 0;
     bottom: 0;
     font-size: 30px;
     text-align: right;
+    /* width: 70%; */
 }
 
-.upText{
+.voteBox__barUp--64 {
+    width: 64%;
+}
+
+.voteBox__barDown--64 {
+    width: 64%;
+}
+
+.voteBox__barUp--36 {
+    width: 36%;
+}
+
+.voteBox__barDown--36 {
+    width: 36%;
+}
+
+.voteBox__barText {
     display: block;
     padding: 8px;
 }
 
-.downText{
-    display: block;
-    padding: 8px;
-}
