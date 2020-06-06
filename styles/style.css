@@ -1,0 +1,32 @@
+.main {
+    background: url('../images/Pope.png') no-repeat center top;
+    background-size: cover;
+    height: 800px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.flex div {
+    border: 1px solid red;
+    width: 490px;
+    height: 550px;
+    margin-top: 20px;
+}
+
+.person1 {
+    background: url('../images/Kanye.png') no-repeat center top;
+}
+.person2 {
+    background: url('../images/Mark.png') no-repeat center top;
+}
+.person3 {
+    background: url('../images/Cristina.png') no-repeat center top;
+}
+.person4 {
+    background: url('../images/Malala.png') no-repeat center top;
+}
