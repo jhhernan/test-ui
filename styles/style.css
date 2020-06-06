@@ -7,19 +7,26 @@
 .flex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 
 }
 
-.flex div {
-    border: 1px solid red;
-    width: 490px;
-    height: 550px;
+.person {
+    min-width: 490px; 
+    min-height: 550px; 
     margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    position: relative;
+    /* background-size: cover; */
 }
+
 
 .person1 {
     background: url('../images/Kanye.png') no-repeat center top;
+    border: 1px solid black;
+    position: relative;
 }
 .person2 {
     background: url('../images/Mark.png') no-repeat center top;
@@ -29,4 +36,85 @@
 }
 .person4 {
     background: url('../images/Malala.png') no-repeat center top;
+}
+
+.personLevel1{
+    position: absolute;
+    width:100%;
+}
+
+.title {
+    position: absolute;
+    bottom: 205px;
+    font-size: 2.5em;
+    padding-left: 40px; 
+    margin: 0;
+}
+
+.date {
+    position: absolute;
+    top: 340px;
+    font-size: 0.9em;
+    padding-left: 40px;
+    margin: 0;
+}
+
+.description {
+    position: absolute;
+    top: 370px;
+    padding-left: 40px;
+    margin: 0;
+}
+
+.thumbStatus {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 307px;
+    background: rgba(28,187,180,0.5);
+
+}
+
+.thumbUp {
+    background: rgba(28,187,180,0.8);
+}
+
+.thumbDown {
+    background: rgba(255,173,29,0.8);
+}
+
+
+.up{
+    background: rgba(28,187,180,0.8);
+    position: absolute;
+    display: block;
+    width: 30%;
+    height: 50px;
+    left: 0;
+    bottom: 0;
+    font-size: 30px;
+}
+
+.down{
+    background: rgba(255,173,29,0.8);
+    position: absolute;
+    display: block;
+    width: 70%;
+    height: 50px;
+    right: 0;
+    bottom: 0;
+    font-size: 30px;
+    text-align: right;
+
+}
+
+.upText{
+    display: block;
+    padding: 10px;
+}
+
+.downText{
+    display: block;
+    padding: 10px;
 }
