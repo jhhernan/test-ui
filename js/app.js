@@ -1,12 +1,12 @@
   
-let votes= [{"id":"person1", "votes_up":20, "votes_down":20 },
-{"id":"person2", "votes_up":20, "votes_down":80 },
-{"id":"person3", "votes_up":10, "votes_down":20 },
-{"id":"person4", "votes_up":5, "votes_down":5 }];
+// let votes= [{"id":"person1", "votes_up":20, "votes_down":20 },
+// {"id":"person2", "votes_up":95, "votes_down":80 },
+// {"id":"person3", "votes_up":10, "votes_down":20 },
+// {"id":"person4", "votes_up":5, "votes_down":5 }];
 
 
 function choose(event) {
-    //console.log(event);
+
     const button = event;
     const buttons = button.parentNode.querySelectorAll(".voteBox__btnUp, .voteBox__btnDown");
 
@@ -20,6 +20,8 @@ function choose(event) {
 }
 
 function voteNow(event) {
+    //Sacando info del storage
+    let votes=JSON.parse(localStorage.getItem("votes"));
 
     const button = event;
     const buttons = button.parentNode.querySelectorAll(".voteBox__btnUp, .voteBox__btnDown");
@@ -59,6 +61,8 @@ function voteNow(event) {
                 btn.style.display="none";
             });
             button.innerHTML="Vote again";
+            
+            localStorage.setItem("votes",JSON.stringify(votes));            
         }
     } 
 }
@@ -71,7 +75,6 @@ function updateBars(vote) {
     }else {
         percentageUp = Math.round(vote.votes_up/(vote.votes_up + vote.votes_down) * 100);
     }
-    console.log(percentageUp);
     const bars = document.querySelectorAll(".voteBox__barUp, .voteBox__barDown");
     bars.forEach( bar => {
         if (bar.getAttribute("data-name") === vote.id){
@@ -93,7 +96,6 @@ function updateBars(vote) {
                 div.innerHTML = '<i class="fa fa-thumbs-up"></i>';
                 div.classList.remove("voteBox__status--Down");
                 div.classList.add("voteBox__status--Up");
-                console.log("Entre en el mayor de 50");
             } else {
                 div.innerHTML = '<i class="fa fa-thumbs-down fa-flip-horizontal"></i>';
                 div.classList.remove("voteBox__status--Up");
@@ -104,11 +106,19 @@ function updateBars(vote) {
 }
 
 function resetBars(){
+    let votes=JSON.parse(localStorage.getItem("votes"));
     votes.forEach(vote => {
         updateBars(vote);
     });
 }
 
 window.onload = () => {
+    if (localStorage.getItem("votes")===null){
+        let votes= [{"id":"person1", "votes_up":20, "votes_down":20 },
+         {"id":"person2", "votes_up":95, "votes_down":80 },
+         {"id":"person3", "votes_up":10, "votes_down":20 },
+         {"id":"person4", "votes_up":5, "votes_down":5 }];
+         localStorage.setItem("votes",JSON.stringify(votes));
+    }
     resetBars();
 }
