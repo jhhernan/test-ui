@@ -84,5 +84,31 @@ function updateBars(vote) {
             }
         }
     });
+
+    //Actualizar voteBox_status
+    const statusDivs = document.querySelectorAll(".voteBox__status");
+    statusDivs.forEach(div => {
+        if (div.getAttribute("data-name") === vote.id){
+            if (percentageUp >= 50){
+                div.innerHTML = '<i class="fa fa-thumbs-up"></i>';
+                div.classList.remove("voteBox__status--Down");
+                div.classList.add("voteBox__status--Up");
+                console.log("Entre en el mayor de 50");
+            } else {
+                div.innerHTML = '<i class="fa fa-thumbs-down fa-flip-horizontal"></i>';
+                div.classList.remove("voteBox__status--Up");
+                div.classList.add("voteBox__status--Down");
+            }
+        }
+    });
 }
 
+function resetBars(){
+    votes.forEach(vote => {
+        updateBars(vote);
+    });
+}
+
+window.onload = () => {
+    resetBars();
+}
