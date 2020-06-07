@@ -1,8 +1,8 @@
   
-let votes= [{"id":"person1", "votes_up":10, "votes_down":10 },
+let votes= [{"id":"person1", "votes_up":20, "votes_down":20 },
 {"id":"person2", "votes_up":20, "votes_down":80 },
 {"id":"person3", "votes_up":10, "votes_down":20 },
-{"id":"person4", "votes_up":20, "votes_down":10 }];
+{"id":"person4", "votes_up":5, "votes_down":5 }];
 
 
 function choose(event) {
@@ -27,7 +27,6 @@ function voteNow(event) {
     let hasVoted = false;
     let active;
 
-
     if (event.innerHTML.indexOf("Vote again") >= 0) {  //Habilitar botones votar...
         buttons.forEach( btn => {
             btn.style.display="flex";
@@ -40,10 +39,10 @@ function voteNow(event) {
                 hasVoted = true;
             }    
         });
-        if (!hasVoted) {   //No han seleccionado el voto
+        if (!hasVoted) {    //No han seleccionado el voto
             alert("Please choose thumb up or thumb down");
             return;
-        }else {
+        }else {             
             votes.forEach((vote,idx)=>{
                 if (vote.id===selected) {
                     if (active === "UP"){
@@ -52,6 +51,7 @@ function voteNow(event) {
                         votes[idx] = {...vote, votes_down: vote.votes_down + 1, }
                     }
                     console.log(votes[idx]);
+                    updateBars(votes[idx]);
                 }
                 
             });            
@@ -59,11 +59,30 @@ function voteNow(event) {
                 btn.style.display="none";
             });
             button.innerHTML="Vote again";
-
         }
-    }
-
-    
-
- 
+    } 
 }
+
+function updateBars(vote) {
+    console.log(vote);
+    let percentageUp;
+    if (vote.votes_up === 0 && vote.votes_down === 0){
+        percentageUp = 50;
+    }else {
+        percentageUp = Math.round(vote.votes_up/(vote.votes_up + vote.votes_down) * 100);
+    }
+    console.log(percentageUp);
+    const bars = document.querySelectorAll(".voteBox__barUp, .voteBox__barDown");
+    bars.forEach( bar => {
+        if (bar.getAttribute("data-name") === vote.id){
+            if(bar.classList.contains("voteBox__barUp")){
+                bar.style.width = percentageUp + "%";
+                bar.innerHTML = '<strong class="voteBox__barText"> <i class="fa fa-thumbs-up"></i> ' + percentageUp + '% </strong>';    
+            }else if (bar.classList.contains("voteBox__barDown")){
+                bar.style.width = (100 - percentageUp) + "%";
+                bar.innerHTML = '<strong class="voteBox__barText">' + (100 - percentageUp) + '% <i class="fa fa-thumbs-down fa-flip-horizontal"></i></strong>';
+            }
+        }
+    });
+}
+
