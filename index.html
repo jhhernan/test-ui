@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4d64261090.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="js/app.js"> </script>
 </head>
 <body>
     <div class="wrapper">
@@ -50,8 +51,8 @@
                 <p class="voteBox__date">1 month ago in Entertainment</p>
                 <p class="voteBox__description">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.</p>
                 <div class="voteBox__vote">
-                    <div class="voteBox__btnUp"> <i class="fa fa-thumbs-up"></i></div>
-                    <div class="voteBox__btnDown"> <i class="fa fa-thumbs-down"></i></div>
+                    <div class="voteBox__btnUp voteBox__btn--active"  id="person1_up" onClick="choose(this)"> <i class="fa fa-thumbs-up"></i></div>
+                    <div class="voteBox__btnDown" id="person1_up" onClick="choose(this)"> <i class="fa fa-thumbs-down"></i></div>
                     <div class="voteBox__btnVote">Vote</div>
                 </div>
                 <div class="voteBox__barUp voteBox__barUp--64"><strong class="voteBox__barText"> <i class="fa fa-thumbs-up"></i> 64% </strong></div>
@@ -65,8 +66,8 @@
                 <p class="voteBox__date">1 month ago in Business</p>
                 <p class="voteBox__description">Thank you for voting!</p>
                 <div class="voteBox__vote">
-                    <div class="voteBox__btnUp"> <i class="fa fa-thumbs-up"></i></div>
-                    <div class="voteBox__btnDown"> <i class="fa fa-thumbs-down"></i></div>
+                    <div class="voteBox__btnUp" id="person2_up" onClick="choose(this)"> <i class="fa fa-thumbs-up"></i></div>
+                    <div class="voteBox__btnDown" id="person2_down" onClick="choose(this)"> <i class="fa fa-thumbs-down"></i></div>
                     <div class="voteBox__btnVote">Vote again</div>
                 </div>
                 <div class="voteBox__barUp voteBox__barUp--36"><strong class="voteBox__barText"> <i class="fa fa-thumbs-up"></i> 36% </strong></div>
@@ -81,8 +82,8 @@
                 <p class="voteBox__date">1 month ago in Politics</p>
                 <p class="voteBox__description">Vestibulum diam ante, portitor a odio eget, rhoncus neque. Aenean eu velit libero.</p>
                 <div class="voteBox__vote">
-                    <div class="voteBox__btnUp"> <i class="fa fa-thumbs-up"></i></div>
-                    <div class="voteBox__btnDown"> <i class="fa fa-thumbs-down"></i></div>
+                    <div class="voteBox__btnUp" id="person3_up" onClick="choose(this)"> <i class="fa fa-thumbs-up"></i></div>
+                    <div class="voteBox__btnDown" id="person3_down" onClick="choose(this)"> <i class="fa fa-thumbs-down"></i></div>
                     <div class="voteBox__btnVote">Vote</div>
                 </div>
                 <div class="voteBox__barUp voteBox__barUp--36"><div class="voteBox__barText"> <i class="fa fa-thumbs-up"></i> 36% </div></div>
@@ -96,8 +97,8 @@
                 <p class="voteBox__date">1 month ago in Entertainment</p>
                 <p class="voteBox__description">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.</p>
                 <div class="voteBox__vote">
-                    <div class="voteBox__btnUp"> <i class="fa fa-thumbs-up"></i></div>
-                    <div class="voteBox__btnDown"> <i class="fa fa-thumbs-down"></i></div>
+                    <div class="voteBox__btnUp" id="person4_up" onClick="choose(this)"> <i class="fa fa-thumbs-up"></i></div>
+                    <div class="voteBox__btnDown" id="person4_down" onClick="choose(this)"> <i class="fa fa-thumbs-down"></i></div>
                     <div class="voteBox__btnVote">Vote</div>
                 </div>
                 <div class="voteBox__barUp voteBox__barUp--64"><strong class="voteBox__barText"> <i class="fa fa-thumbs-up"></i> 64% </strong></div>

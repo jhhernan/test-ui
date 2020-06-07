@@ -295,6 +295,14 @@ header nav a {
     height: 32px;
 }
 
+.voteBox__btn--active {
+    border: 2px solid white;
+}
+
+.voteBox__btn--inactive {
+    border: 0;
+}
+
 .voteBox__barUp {
     background: rgba(28,187,180,0.8);
     position: absolute;
