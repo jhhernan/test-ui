@@ -192,16 +192,21 @@ header nav a {
 }
 
 .voteContainer {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px 30px;
 }
 
 .voteBox {
-    min-width: 490px;  
+    max-width: 490px;   
     height: 550px; 
     margin-top: 10px;
     margin-bottom: 40px;
+    margin-left: 0px;
     color: white;
     position: relative;
     content: ' ';
@@ -432,9 +437,12 @@ header nav a {
 @media(max-width: 700px) {
  
     .voteContainer {
-        display: flex;
+        /* display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: center; */
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 30px 0px;
     }
 
     .info {
@@ -477,6 +485,11 @@ header nav a {
     .main__description {
         font-size: 14px;
     }
+ 
+    .voteSection {
+        margin-left: 10px;
+        margin-right: 10px;
+    } 
     
     .votes__title {
         text-align: left;
