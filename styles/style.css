@@ -283,6 +283,7 @@ header nav a {
     width: 30px;
     height: 30px;
     background: rgba(28,187,180,0.8);
+    cursor: pointer;
 }
 
 .voteBox__btnDown {
@@ -293,6 +294,7 @@ header nav a {
     height: 30px;
     background: rgba(255,173,29,0.8);
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .voteBox__btnVote {
@@ -303,6 +305,7 @@ header nav a {
     margin-left: 10px;
     width: 86px;
     height: 32px;
+    cursor: pointer;
 }
 
 .voteBox__btn--active {
