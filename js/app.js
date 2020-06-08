@@ -1,9 +1,3 @@
-  
-// let votes= [{"id":"person1", "votes_up":20, "votes_down":20 },
-// {"id":"person2", "votes_up":95, "votes_down":80 },
-// {"id":"person3", "votes_up":10, "votes_down":20 },
-// {"id":"person4", "votes_up":5, "votes_down":5 }];
-
 
 function choose(event) {
 
@@ -34,6 +28,16 @@ function voteNow(event) {
             btn.style.display="flex";
         });
         button.innerHTML="Vote now";
+
+        //Restaurar descripcion
+        const [data] = votes.filter(vote => vote.id===selected);
+        const descriptionDivs = document.querySelectorAll(".voteBox__description");
+        descriptionDivs.forEach(div => {
+            if (div.getAttribute("data-name") === selected){
+                div.innerHTML=data.description;
+            }
+        });
+    
     } else {
         buttons.forEach(btn => {
             if (btn.classList.contains("voteBox__btn--active")) {
@@ -59,8 +63,17 @@ function voteNow(event) {
             });            
             buttons.forEach( btn => {       //Deshabilitar botones y cambiar leyenda
                 btn.style.display="none";
+                btn.classList.remove("voteBox__btn--active");
+                btn.classList.add("voteBox__btn--inactive");
             });
             button.innerHTML="Vote again";
+
+            const descriptionDivs = document.querySelectorAll(".voteBox__description");
+            descriptionDivs.forEach(div => {
+                if (div.getAttribute("data-name") === selected){
+                    div.innerHTML="Thank you for voting!";
+                }
+            });
             
             localStorage.setItem("votes",JSON.stringify(votes));            
         }
@@ -114,10 +127,10 @@ function resetBars(){
 
 window.onload = () => {
     if (localStorage.getItem("votes")===null){
-        let votes= [{"id":"person1", "votes_up":20, "votes_down":20 },
-         {"id":"person2", "votes_up":95, "votes_down":80 },
-         {"id":"person3", "votes_up":10, "votes_down":20 },
-         {"id":"person4", "votes_up":5, "votes_down":5 }];
+        let votes= [{"id":"person1", "votes_up":20, "votes_down":20, "description":"Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero." },
+         {"id":"person2", "votes_up":95, "votes_down":80, "description":"Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero." },
+         {"id":"person3", "votes_up":10, "votes_down":20, "description":"Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero." },
+         {"id":"person4", "votes_up":5, "votes_down":5, "description":"Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero." }];
          localStorage.setItem("votes",JSON.stringify(votes));
     }
     resetBars();
